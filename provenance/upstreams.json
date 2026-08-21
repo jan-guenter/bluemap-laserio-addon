@@ -80,9 +80,9 @@
     ],
     "persisted_inputs": [
       "laserColor",
-      "renderedConnections[].pos.{X,Y,Z}",
+      "renderedConnections[].pos.[I;x,y,z]",
       "partnerDimPos.dimension",
-      "partnerDimPos.blockpos.{X,Y,Z}"
+      "partnerDimPos.blockpos.[I;x,y,z]"
     ],
     "rendering": [
       "installed JSON shells with tintindex-only laserColor",
