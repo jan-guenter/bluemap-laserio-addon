@@ -40,41 +40,13 @@ public final class LaserIoBlockEntityData extends MCABlockEntity {
     public static final class RenderedConnection {
 
         @NBTName("pos")
-        private Position position;
+        private int[] position;
 
         public RenderedConnection() {
         }
 
-        Position position() {
-            return position;
-        }
-    }
-
-    /** Minecraft's exact compound representation written by NbtUtils. */
-    public static final class Position {
-
-        @NBTName("X")
-        private Integer x;
-
-        @NBTName("Y")
-        private Integer y;
-
-        @NBTName("Z")
-        private Integer z;
-
-        public Position() {
-        }
-
-        Integer x() {
-            return x;
-        }
-
-        Integer y() {
-            return y;
-        }
-
-        Integer z() {
-            return z;
+        int[] position() {
+            return position == null ? null : position.clone();
         }
     }
 
@@ -85,7 +57,7 @@ public final class LaserIoBlockEntityData extends MCABlockEntity {
         private String dimension;
 
         @NBTName("blockpos")
-        private Position blockPosition;
+        private int[] blockPosition;
 
         public PartnerPosition() {
         }
@@ -94,8 +66,8 @@ public final class LaserIoBlockEntityData extends MCABlockEntity {
             return dimension;
         }
 
-        Position blockPosition() {
-            return blockPosition;
+        int[] blockPosition() {
+            return blockPosition == null ? null : blockPosition.clone();
         }
     }
 }

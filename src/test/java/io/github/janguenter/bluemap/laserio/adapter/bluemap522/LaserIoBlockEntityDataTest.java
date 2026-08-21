@@ -37,17 +37,12 @@ class LaserIoBlockEntityDataTest {
             connection(writer, Integer.MIN_VALUE, Integer.MIN_VALUE, 0);
             connection(writer, Integer.MAX_VALUE, 0, 0);
             writer.beginCompound();
-            writer.name("pos").beginCompound();
-            writer.name("X").value(1);
-            writer.name("Y").value(2);
-            writer.endCompound();
+            writer.name("pos").value(new int[]{1, 2});
             writer.endCompound();
             writer.endList();
             writer.name("partnerDimPos").beginCompound();
             writer.name("dimension").value("minecraft:the_nether");
-            writer.name("blockpos").beginCompound();
-            position(writer, 100, 64, -20);
-            writer.endCompound();
+            writer.name("blockpos").value(new int[]{100, 64, -20});
             writer.endCompound();
 
             writer.name("connections").beginList(1, TagType.COMPOUND);
@@ -72,9 +67,7 @@ class LaserIoBlockEntityDataTest {
         LaserIoSnapshot snapshot = decoder.decode(read(writer -> {
             writer.name("partnerDimPos").beginCompound();
             writer.name("dimension").value("not a dimension");
-            writer.name("blockpos").beginCompound();
-            position(writer, 0, 0, 0);
-            writer.endCompound();
+            writer.name("blockpos").value(new int[]{0, 0, 0});
             writer.endCompound();
         }));
 
@@ -114,15 +107,7 @@ class LaserIoBlockEntityDataTest {
 
     private static void connectionBody(NBTWriter writer, int x, int y, int z)
             throws IOException {
-        writer.name("pos").beginCompound();
-        position(writer, x, y, z);
-        writer.endCompound();
-    }
-
-    private static void position(NBTWriter writer, int x, int y, int z) throws IOException {
-        writer.name("X").value(x);
-        writer.name("Y").value(y);
-        writer.name("Z").value(z);
+        writer.name("pos").value(new int[]{x, y, z});
     }
 
     @FunctionalInterface

@@ -73,7 +73,7 @@ class Placement:
 
 
 def block_pos_nbt(position: Position | Offset) -> str:
-    return f"{{X:{position.x},Y:{position.y},Z:{position.z}}}"
+    return f"[I;{position.x},{position.y},{position.z}]"
 
 
 def connection_list(offsets: tuple[Offset, ...]) -> str:

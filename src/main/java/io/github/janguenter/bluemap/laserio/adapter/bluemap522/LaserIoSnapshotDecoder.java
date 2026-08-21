@@ -37,15 +37,12 @@ final class LaserIoSnapshotDecoder {
         );
     }
 
-    private static LaserIoSnapshot.Offset decodePosition(
-            LaserIoBlockEntityData.Position position
-    ) {
-        if (position == null || position.x() == null
-                || position.y() == null || position.z() == null) {
+    private static LaserIoSnapshot.Offset decodePosition(int[] position) {
+        if (position == null || position.length != 3) {
             return null;
         }
         return new LaserIoSnapshot.Offset(
-                position.x(), position.y(), position.z()
+                position[0], position[1], position[2]
         );
     }
 
