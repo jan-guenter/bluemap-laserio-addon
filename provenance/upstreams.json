@@ -9,11 +9,33 @@
       "file_name": "laserio-1.9.11.jar",
       "key": "laserio",
       "license": "MIT",
+      "license_path": "LICENSE.txt",
       "mod_id": "laserio",
       "redistributed": false,
       "sha1": "0545bff65926346c9663fe3c397029561a87400f",
       "sha256": "03e8537d75bc2f4ced2fc214d3409753e684d1056ee63b26db7a2b9e199ef4df",
       "size": 1305285,
+      "source": {
+        "commit": "4d278a6351a434d343fbf70d942baeeaf2607536",
+        "committed_at": "2024-09-16T22:46:42Z",
+        "correlation": "T4_SOURCE_CORRELATED_HIGH_CONFIDENCE",
+        "license_path": "LICENSE.txt",
+        "message": "v1.9.11",
+        "paths": {
+          "advanced_renderer": "src/main/java/com/direwolf20/laserio/client/blockentityrenders/LaserConnectorAdvBERender.java",
+          "advanced_state": "src/main/java/com/direwolf20/laserio/common/blockentities/LaserConnectorAdvBE.java",
+          "block_color_registration": "src/main/java/com/direwolf20/laserio/setup/ClientSetup.java",
+          "global_position_codec": "src/main/java/com/direwolf20/laserio/util/MiscTools.java",
+          "ordinary_beam_geometry": "src/main/java/com/direwolf20/laserio/client/renderer/RenderUtils.java",
+          "ordinary_link_range": "src/main/java/com/direwolf20/laserio/common/items/LaserWrench.java",
+          "ordinary_render_queue": "src/main/java/com/direwolf20/laserio/client/blockentityrenders/baseberender/BaseLaserBERender.java",
+          "persisted_base_state": "src/main/java/com/direwolf20/laserio/common/blockentities/basebe/BaseLaserBE.java",
+          "registrations": "src/main/java/com/direwolf20/laserio/setup/Registration.java"
+        },
+        "repository": "https://github.com/Direwolf20-MC/LaserIO",
+        "tree": "37b76004c4c442106ab875c11562223366dd50e1",
+        "use_lane": "MIT-behavior-adaptation-and-operator-installed-resource-interpreter"
+      },
       "version": "1.9.11"
     }
   ],
@@ -33,5 +55,40 @@
   },
   "profile": "laserio-1.9.11",
   "schema": 1,
-  "source_use": "Runtime interfaces and installed resources may be interpreted only after family-specific evidence is recorded; no candidate classes, assets, binaries, source, or captured meshes are packaged."
+  "scope": {
+    "blocks": [
+      "laserio:laser_node",
+      "laserio:laser_connector",
+      "laserio:laser_connector_advanced"
+    ],
+    "excluded": [
+      "card and capability beams",
+      "item flow and activity overlays",
+      "particles and showParticles",
+      "held-wrench alpha",
+      "animation and pulsing portal geometry",
+      "cross-dimension partner lines"
+    ],
+    "installed_resources": [
+      "assets/laserio/blockstates/laser_node.json",
+      "assets/laserio/blockstates/laser_connector.json",
+      "assets/laserio/blockstates/laser_connector_advanced.json",
+      "assets/laserio/models/block/laser_node.json",
+      "assets/laserio/models/block/laser_connector.json",
+      "assets/laserio/models/block/laser_connector_advanced.json",
+      "assets/laserio/textures/misc/laser.png"
+    ],
+    "persisted_inputs": [
+      "laserColor",
+      "renderedConnections[].pos.[I;x,y,z]",
+      "partnerDimPos.dimension",
+      "partnerDimPos.blockpos.[I;x,y,z]"
+    ],
+    "rendering": [
+      "installed JSON shells with tintindex-only laserColor",
+      "ordinary fullbright crossed-quad renderedConnections beams",
+      "deterministic short facing advanced partner port beam"
+    ]
+  },
+  "source_use": "Exact correlated MIT source bounds a compact behavior adaptation. Runtime interfaces and operator-installed resources are interpreted only after exact-artifact admission; no candidate classes, assets, binaries, source files, or captured meshes are packaged."
 }

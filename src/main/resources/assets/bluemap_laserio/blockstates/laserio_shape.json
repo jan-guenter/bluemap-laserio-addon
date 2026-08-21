@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "": {
+      "renderer": "bluemap_laserio:laserio_shape",
+      "model": "bluemap:block/missing"
+    }
+  }
+}

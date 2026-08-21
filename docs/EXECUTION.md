@@ -1,7 +1,11 @@
 # Add-on execution
 
-This repository starts inactive and stock-safe. Implement only the smallest
-observed LaserIO rendering defect before staging.
+This repository remains inactive and stock-safe until the exact
+`laserio-1.9.11` artifact and installed resource contract are admitted. The
+prototype scope is frozen to the three tinted installed shells, ordinary
+persisted `renderedConnections` beams, and deterministic short advanced
+partner port beams. Card/capability paths, flow/activity, particles,
+held-wrench alpha, animation, and cross-dimension partner lines are excluded.
 
 ## Prototype
 
@@ -39,8 +43,9 @@ Record `visual_acceptance: true` under `owner_accepted_staging`, and record the
 production JAR, sources JAR, POM and Gradle module file names, sizes and hashes
 under `final_release_artifacts`.
 
-Promote `addon_version` through a pull request, remove every
-`SCAFFOLD_NOT_IMPLEMENTED` marker, and run with all exact candidate properties:
+Promote `addon_version` through a pull request, confirm no generated
+implementation placeholders remain, and run with all exact candidate
+properties:
 
 ```bash
 gradle --no-daemon -PbluemapSourcePath=../bluemap-backport \
