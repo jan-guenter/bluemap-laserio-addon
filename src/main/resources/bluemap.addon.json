@@ -1,0 +1,6 @@
+{
+  "id": "bluemap-laserio",
+  "entrypoint": "io.github.janguenter.bluemap.laserio.BlueMapLaserIoAddon",
+  "dependencies": [],
+  "soft-dependencies": []
+}
