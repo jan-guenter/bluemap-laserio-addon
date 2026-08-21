@@ -3,12 +3,10 @@
 A Java 21 BlueMap add-on for the exact `laserio-1.9.11` profile in All the Mons
 `1.2.0` / Minecraft `1.21.1`.
 
-Status: narrow renderer prototype. After exact-artifact admission, the BlueMap
-5.22 adapter replays the operator-installed models for all three LaserIO
-blocks, applies persisted `laserColor` to their tinted faces, and adds only the
-persisted connection geometry described below. Unsupported or malformed
-inputs retain BlueMap's stock rendering. Visual acceptance and release sealing
-remain pending.
+The BlueMap 5.22 adapter replays the operator-installed models for all three
+LaserIO blocks, applies persisted `laserColor` to their tinted faces, and adds
+only the persisted connection geometry described below. Unsupported or
+malformed inputs retain BlueMap's stock rendering.
 
 ## Build
 
@@ -16,11 +14,11 @@ remain pending.
 gradle --no-daemon -PbluemapSourcePath=../bluemap-backport clean check build
 ```
 
-`check` is the quick Java/checkstyle/archive gate. `prototypeCheck` additionally
+`check` is the quick Java/checkstyle/archive gate. `prototypeCheck` also
 requires every exact candidate JAR property and validates the deterministic
 twelve-cell gallery. See `provenance/upstreams.json` for immutable artifact
-and source identities and the [execution guide](docs/EXECUTION.md) for the
-prototype-to-release loop.
+and source identities. Release identity and verification are recorded in
+`provenance/release.json`.
 
 ## Install
 

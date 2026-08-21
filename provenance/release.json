@@ -1,10 +1,81 @@
 {
-  "accepted_staging_entries": null,
-  "final_release_artifacts": null,
-  "note": "Populate only after owner visual acceptance; this file is not packaged.",
-  "owner_accepted_staging": null,
-  "repository": "https://github.com/jan-guenter/bluemap-laserio-addon",
   "schema_version": 1,
-  "status": "prototype-not-owner-accepted",
-  "version": "0.1.0-SNAPSHOT"
+  "status": "owner-accepted-release-candidate",
+  "version": "0.1.0-alpha.1",
+  "release_date": "2026-08-21",
+  "repository": "https://github.com/jan-guenter/bluemap-laserio-addon",
+  "tag": "v0.1.0-alpha.1",
+  "maven_coordinate": "io.github.jan-guenter:bluemap-laserio-addon:0.1.0-alpha.1",
+  "owner_accepted_staging": {
+    "commit": "2cb09ace67ef697d3385e1137541f8c2a1b3ad66",
+    "tree": "757bb555eaf0b224f574f4d841372bae9506e17f",
+    "production_jar_size": 110884,
+    "production_jar_sha256": "902e3cb7b595ff387917b1bbd79ae3ff13c682ad84c3b8fc3df6c373dc286094",
+    "accepted_at": "2026-08-21",
+    "visual_acceptance": true,
+    "gallery_archive_size": 3870,
+    "gallery_archive_sha256": "acea3d7134891204f9b2246ed584fa6bfe730a7b8e3cfe2ab19b6187ddaf474b",
+    "checks_per_phase": 25,
+    "failures_per_phase": 0
+  },
+  "post_acceptance_metadata_correction": {
+    "commit": "239152cb22792b0461e73cb31969fb0973ba3c31",
+    "path": "provenance/upstreams.json",
+    "reason": "Correct the documented Minecraft 1.21 BlockPos encoding from legacy compounds to int arrays.",
+    "changed_jar_entries": [
+      "META-INF/bluemap-laserio/upstreams.json"
+    ],
+    "renderer_classes_and_gallery_changed": false,
+    "corrected_snapshot_jar_size": 110888,
+    "corrected_snapshot_jar_sha256": "13a34f259e041555cd44d3f2806aa9304fed09b1a3486ecc1485934ddb5827fe"
+  },
+  "accepted_staging_entries": {
+    "path": "provenance/accepted-staging-entries.sha256",
+    "entry_count": 35,
+    "sha256": "0b285d647ccb7c5c6e7a486709be6ea1032fa022fc20f96b6e4f483c27bbdb69"
+  },
+  "final_release_artifacts": {
+    "production_jar": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.1.jar", "size": 110887, "sha256": "006900dd9000c6614c60b38df46b6cd1940dab53f059a381c282e9d79e89dbf1"},
+    "sources_jar": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.1-sources.jar", "size": 73956, "sha256": "f4dc9e678e3730c6f54f1e0bd81bd1ef3424e227e8bd7a73c7ad59e947878aee"},
+    "pom": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.1.pom", "size": 1317, "sha256": "2d74e77f8c4d1bc2369c363d05c75bc421eee0b2f0567227dea500d66d115bab"},
+    "gradle_module": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.1.module.json", "size": 2819, "sha256": "ca08ac2e7cc605c1ae135319e645dc916f371d9712243c2794fb608826f5e5bf"},
+    "sha256sums": {"file_name": "SHA256SUMS", "size": 440, "sha256": "55eb93bea46098429f19bcca7ca25369762579ef460119debc06ecdf0eb7e957"}
+  },
+  "staged_equivalence": {
+    "entry_manifest": "provenance/accepted-staging-entries.sha256",
+    "identical_non_manifest_entries": 35,
+    "whole_jar_byte_identical": false,
+    "only_changed_entry_bytes": "META-INF/MANIFEST.MF",
+    "change_reason": "Implementation-Version changed from the corrected SNAPSHOT marker to the final release version.",
+    "archive_normalization": "Every release JAR entry uses ZIP STORED compression and empty directories are excluded."
+  },
+  "gallery": {
+    "archive_file_name": "bluemap-laserio-gallery.zip",
+    "size": 3870,
+    "sha256": "acea3d7134891204f9b2246ed584fa6bfe730a7b8e3cfe2ab19b6187ddaf474b",
+    "cells": 12,
+    "assertions_per_phase": 25,
+    "phases": 2,
+    "published_as_release_asset": false
+  },
+  "ephemeral_ci_inputs": {
+    "laserio": {
+      "curseforge_project": 626839,
+      "curseforge_file": 5730007,
+      "size": 1305285,
+      "sha256": "03e8537d75bc2f4ced2fc214d3409753e684d1056ee63b26db7a2b9e199ef4df"
+    },
+    "policy": "Downloaded only into the ephemeral runner, verified before use, and never bundled or uploaded."
+  },
+  "verification": {
+    "production_jar_exact_byte_gate": true,
+    "sources_jar_exact_byte_gate": true,
+    "publication_metadata_exact_byte_gate": true,
+    "gallery_archive_exact_byte_gate": true,
+    "exact_input_gate": true
+  },
+  "immutable_packaged_provenance": {
+    "path": "provenance/upstreams.json",
+    "note": "The release packages the corrected Minecraft 1.21 int-array position provenance frozen before version promotion."
+  }
 }
