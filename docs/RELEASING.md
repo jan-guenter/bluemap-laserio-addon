@@ -9,8 +9,8 @@ After the owner accepts the candidate:
 1. Confirm the accepted renderer remains inside the documented narrow scope
    and the deterministic twelve-cell gallery exactly matches that candidate.
 2. Freeze the accepted staging JAR's non-manifest entry hashes in
-   `provenance/accepted-staging-entries.sha256` with the one-time writer in
-   `tools/verify_staged_equivalence.py --write`.
+   `provenance/accepted-staging-entries.sha256` with the one-time
+   `bluemap-addon-toolkit jar-entries write` command.
 3. Change `addon_version` from the SNAPSHOT to its final version through a PR.
 4. Build production JAR, sources JAR, POM, and Gradle module metadata with the
    exact promotion Java/Gradle/BlueMap inputs.
