@@ -10,6 +10,9 @@ malformed inputs retain BlueMap's stock rendering.
 
 ## Build
 
+Clone with `--recurse-submodules`, or initialize an existing checkout with
+`git submodule update --init --recursive`, before invoking Gradle.
+
 ```bash
 gradle --no-daemon -PbluemapSourcePath=../bluemap-backport clean check build
 ```
