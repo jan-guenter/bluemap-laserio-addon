@@ -23,6 +23,13 @@ twelve-cell gallery. See `provenance/upstreams.json` for immutable artifact
 and source identities. Release identity and verification are recorded in
 `provenance/release.json`.
 
+The pinned `modules/bluemap-addon-runtime` source module supplies the neutral
+exact-artifact detector classes. Gradle compiles those sources into this
+add-on; the runtime module JAR is neither nested nor installed separately.
+The gitlink pins `v0.1.0-alpha.1` commit
+`6c062239f2669de9d20da32dc8b5372a5653b19d` and the settings preflight rejects
+an uninitialized, changed, or dirty checkout.
+
 ## Install
 
 Place the production JAR in BlueMap's add-on pack directory and restart the

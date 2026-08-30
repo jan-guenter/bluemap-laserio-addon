@@ -5,6 +5,7 @@
 package io.github.janguenter.bluemap.laserio.profile;
 
 import de.bluecolored.bluemap.core.util.Key;
+import io.github.janguenter.bluemap.addon.runtime.artifact.ArtifactPin;
 
 import java.util.List;
 import java.util.Set;

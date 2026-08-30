@@ -8,9 +8,12 @@ partner port beams. Card/capability paths, flow/activity, particles,
 held-wrench alpha, animation, and cross-dimension partner lines are excluded.
 
 Before running Gradle gates, activate a Python 3.11 or newer virtual
-environment and install the exact development-only toolkit into it:
+environment, initialize the exact development-tool and runtime source
+submodules, and install the matching toolkit wheel into it:
 
 ```bash
+git submodule update --init --recursive -- \
+  tooling/bluemap-addon-toolkit modules/bluemap-addon-runtime
 python -m pip install --disable-pip-version-check --no-deps \
   --require-hashes --only-binary=:all: \
   --requirement requirements/toolkit.txt
@@ -18,6 +21,9 @@ python -m pip install --disable-pip-version-check --no-deps \
 
 The requirement locks the 20,585-byte `v0.3.0-alpha.1` wheel at SHA-256
 `82f1ec53603646849a7c2d4b58f3fb7000413fe83043a302bee88cc88daeb8f7`.
+The runtime gitlink pins `v0.1.0-alpha.1` commit
+`6c062239f2669de9d20da32dc8b5372a5653b19d`; its main sources are compiled
+into the add-on and its standalone JAR is never installed or nested.
 
 ## Prototype
 

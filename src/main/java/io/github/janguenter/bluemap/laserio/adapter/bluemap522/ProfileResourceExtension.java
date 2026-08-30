@@ -12,8 +12,8 @@ import de.bluecolored.bluemap.core.resources.pack.resourcepack.blockstate.Varian
 import de.bluecolored.bluemap.core.util.Key;
 import de.bluecolored.bluemap.core.world.BlockProperties;
 import de.bluecolored.bluemap.core.world.BlockState;
+import io.github.janguenter.bluemap.addon.runtime.artifact.ExactArtifactDetector;
 import io.github.janguenter.bluemap.laserio.activation.AddonRuntime;
-import io.github.janguenter.bluemap.laserio.profile.ExactArtifactDetector;
 import io.github.janguenter.bluemap.laserio.profile.LaserIo1911Profile;
 
 import java.nio.file.Path;
