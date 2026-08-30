@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "status": "owner-accepted-release-candidate",
-  "version": "0.1.0-alpha.1",
-  "release_date": "2026-08-21",
+  "version": "0.1.0-alpha.2",
+  "release_date": "2026-08-30",
   "repository": "https://github.com/jan-guenter/bluemap-laserio-addon",
-  "tag": "v0.1.0-alpha.1",
-  "maven_coordinate": "io.github.jan-guenter:bluemap-laserio-addon:0.1.0-alpha.1",
+  "tag": "v0.1.0-alpha.2",
+  "maven_coordinate": "io.github.jan-guenter:bluemap-laserio-addon:0.1.0-alpha.2",
   "owner_accepted_staging": {
     "commit": "2cb09ace67ef697d3385e1137541f8c2a1b3ad66",
     "tree": "757bb555eaf0b224f574f4d841372bae9506e17f",
@@ -32,22 +32,54 @@
   "accepted_staging_entries": {
     "path": "provenance/accepted-staging-entries.sha256",
     "entry_count": 35,
-    "sha256": "0b285d647ccb7c5c6e7a486709be6ea1032fa022fc20f96b6e4f483c27bbdb69"
+    "sha256": "182173579356e349b510444ef46a301bc486c24a20add08a94afd56ac0995f66"
   },
   "final_release_artifacts": {
-    "production_jar": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.1.jar", "size": 110887, "sha256": "006900dd9000c6614c60b38df46b6cd1940dab53f059a381c282e9d79e89dbf1"},
-    "sources_jar": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.1-sources.jar", "size": 73956, "sha256": "f4dc9e678e3730c6f54f1e0bd81bd1ef3424e227e8bd7a73c7ad59e947878aee"},
-    "pom": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.1.pom", "size": 1317, "sha256": "2d74e77f8c4d1bc2369c363d05c75bc421eee0b2f0567227dea500d66d115bab"},
-    "gradle_module": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.1.module.json", "size": 2819, "sha256": "ca08ac2e7cc605c1ae135319e645dc916f371d9712243c2794fb608826f5e5bf"},
-    "sha256sums": {"file_name": "SHA256SUMS", "size": 440, "sha256": "55eb93bea46098429f19bcca7ca25369762579ef460119debc06ecdf0eb7e957"}
+    "production_jar": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.2.jar", "size": 111676, "sha256": "d01eb100dd57f7efc1ac4ce8c004e02320901e83ef16337dac24b9e690849828"},
+    "sources_jar": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.2-sources.jar", "size": 74565, "sha256": "654a8ab0bfc0ea38b65a638e1f459acef3891e41ddf2607916c9f6468a860429"},
+    "pom": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.2.pom", "size": 1317, "sha256": "1d0598c7ac8cd13e015f58f343a355fc1691dc638310b40320d1e8ce52737f21"},
+    "gradle_module": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.2.module.json", "size": 2819, "sha256": "7961b5578b6e4ea22fe2c06827916a6bd104ea9018e3a2b985d7c13a0684d84e"},
+    "sha256sums": {"file_name": "SHA256SUMS", "size": 440, "sha256": "aeeb74f8e793dc11be07efe34b3747909d8cb2f55f21d6c977408e8f649e0ce3"}
   },
   "staged_equivalence": {
     "entry_manifest": "provenance/accepted-staging-entries.sha256",
     "identical_non_manifest_entries": 35,
     "whole_jar_byte_identical": false,
     "only_changed_entry_bytes": "META-INF/MANIFEST.MF",
-    "change_reason": "Implementation-Version changed from the corrected SNAPSHOT marker to the final release version.",
+    "change_reason": "The sealed alpha.2 functional entries match the reviewed runtime-module migration candidate; only the versioned manifest is excluded from the entry manifest.",
     "archive_normalization": "Every release JAR entry uses ZIP STORED compression and empty directories are excluded."
+  },
+  "runtime_module_migration": {
+    "baseline_version": "0.1.0-alpha.1",
+    "baseline_release_commit": "2148a344b1ae78e77b95aa2baa51efe46c1357e8",
+    "baseline_production_jar_size": 110887,
+    "baseline_production_jar_sha256": "006900dd9000c6614c60b38df46b6cd1940dab53f059a381c282e9d79e89dbf1",
+    "runtime_repository": "https://github.com/jan-guenter/bluemap-addon-runtime",
+    "runtime_version": "0.1.0-alpha.1",
+    "runtime_tag": "v0.1.0-alpha.1",
+    "runtime_commit": "6c062239f2669de9d20da32dc8b5372a5653b19d",
+    "runtime_source_tree": "c70cf01d3196eb8a8eeacb572f7f3ceb6f3e2025",
+    "production_archive": {
+      "old_entries": 36,
+      "new_entries": 36,
+      "unchanged_entries": 29,
+      "changed_common_entries": 3,
+      "removed_local_runtime_classes": 4,
+      "added_shared_runtime_classes": 4
+    },
+    "sources_archive": {
+      "old_entries": 26,
+      "new_entries": 26,
+      "unchanged_entries": 22,
+      "changed_callers": 2,
+      "removed_local_runtime_sources": 2,
+      "added_shared_runtime_sources": 2
+    },
+    "package_normalized_shared_sources_exact": true,
+    "package_normalized_shared_bytecode_exact": true,
+    "package_normalized_caller_bytecode_exact": true,
+    "gallery_byte_identical": true,
+    "behavior_change": false
   },
   "gallery": {
     "archive_file_name": "bluemap-laserio-gallery.zip",
