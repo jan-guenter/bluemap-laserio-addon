@@ -3,10 +3,11 @@
 A Java 21 BlueMap add-on for the exact `laserio-1.9.11` profile in All the Mons
 `1.2.0` / Minecraft `1.21.1`.
 
-The BlueMap 5.22 adapter replays the operator-installed models for all three
-LaserIO blocks, applies persisted `laserColor` to their tinted faces, and adds
-only the persisted connection geometry described below. Unsupported or
-malformed inputs retain BlueMap's stock rendering.
+The adapter for the exact tested BlueMap 5.23 feature backport replays the
+operator-installed models for all three LaserIO blocks. It applies persisted
+`laserColor` to their tinted faces and adds only the persisted connection
+geometry described below. Unsupported or malformed inputs retain BlueMap's
+stock rendering.
 
 ## Build
 
@@ -31,10 +32,18 @@ The gitlink pins `v0.1.0-alpha.1` commit
 an uninitialized, changed, or dirty checkout.
 
 The pinned `modules/bluemap-addon-render-core` source module supplies the
-byte-equivalent face-lighting sampler shared by compatible BlueMap 5.22
-adapters. Its source is also compiled directly into this add-on; no shared
-runtime JAR is installed or nested. The settings preflight pins both its exact
+byte-equivalent face-lighting sampler shared by compatible BlueMap adapters.
+Its source is also compiled directly into this add-on; no shared runtime JAR
+is installed or nested. The settings preflight pins both its exact
 commit and production-source tree and rejects an uninitialized or dirty copy.
+
+The pinned `modules/bluemap-addon-adapter-api` source module supplies the
+exact 5.23 feature-backport runtime identity, registry guards, resource
+extension wrapper, and synthetic-dispatch validator. Gradle compiles its four
+production sources into this add-on. The standalone module JAR is neither
+installed nor nested. The gitlink pins `v0.1.0-alpha.2` commit
+`e81f08bc4bfbf02d810ec8949a019130e2e61634`. The consumer accepts only commit
+`7e07f4e74ec1e92a6ead9aa1e66054af3e133aac` of the BlueMap feature backport.
 
 ## Install
 

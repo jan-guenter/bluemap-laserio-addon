@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.0-alpha.4 - 2026-08-30
+
+- Replaced the private compatibility, registry, resource-extension, and
+  synthetic-dispatch helpers with the pinned `bluemap-addon-adapter-api`
+  source module.
+- Restricted the adapter, source checkout, CI, and release gates to the exact
+  tested BlueMap 5.23 feature-backport commit.
+- Preserved renderer and extension registration order, block-entity
+  registration order, and all existing failure reasons.
+
 ## 0.1.0-alpha.3 - 2026-08-30
 
 - Replaced the private face-lighting helper with the byte-equivalent

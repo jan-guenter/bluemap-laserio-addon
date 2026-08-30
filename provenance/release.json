@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "status": "owner-accepted-release-candidate",
-  "version": "0.1.0-alpha.3",
+  "version": "0.1.0-alpha.4",
   "release_date": "2026-08-30",
   "repository": "https://github.com/jan-guenter/bluemap-laserio-addon",
-  "tag": "v0.1.0-alpha.3",
-  "maven_coordinate": "io.github.jan-guenter:bluemap-laserio-addon:0.1.0-alpha.3",
+  "tag": "v0.1.0-alpha.4",
+  "maven_coordinate": "io.github.jan-guenter:bluemap-laserio-addon:0.1.0-alpha.4",
   "owner_accepted_staging": {
     "commit": "2cb09ace67ef697d3385e1137541f8c2a1b3ad66",
     "tree": "757bb555eaf0b224f574f4d841372bae9506e17f",
@@ -31,22 +31,22 @@
   },
   "accepted_staging_entries": {
     "path": "provenance/accepted-staging-entries.sha256",
-    "entry_count": 35,
-    "sha256": "194d8f6082ce1ba9db3cf6e4aaf9e71245ae74509586a2c79862fb79d57c5515"
+    "entry_count": 36,
+    "sha256": "968d4258eb704303c6a33815e42f8d1ee4c94108170991b113e10f61be7d8523"
   },
   "final_release_artifacts": {
-    "production_jar": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.3.jar", "size": 113607, "sha256": "0be9ddacdac5a11a15e608605562d8f49b142585d1ec605ad7278b14e89a17a2"},
-    "sources_jar": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.3-sources.jar", "size": 76502, "sha256": "9a181222cc2239f6be3db569cf45bb1d652811076b27dd1b8c5cd7cdf8b5150b"},
-    "pom": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.3.pom", "size": 1317, "sha256": "381e3b507c3e3887a7d22b61b80c3d36ce56f3ae8004fd138db38182cac5844c"},
-    "gradle_module": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.3.module.json", "size": 2819, "sha256": "436a6f849ca6ac6e393735ddf35be1b3299114900c0ee8c2a4017146cb1f9f5c"},
-    "sha256sums": {"file_name": "SHA256SUMS", "size": 440, "sha256": "4fd65329f81bdc14ee654b360a95bf844f4032303586ab388ea1cad9c7bf6c2b"}
+    "production_jar": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.4.jar", "size": 116935, "sha256": "d719f59197505f00acce4ef6ab72fab7fc62f766369e8035f7c7e8bff2d19793"},
+    "sources_jar": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.4-sources.jar", "size": 79841, "sha256": "6d8766fe2e31cfc72b1de07cddb6f5ea9642f3d149a8c71939bd72ab653877b3"},
+    "pom": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.4.pom", "size": 1317, "sha256": "4e98439a19531071503ab479443fdac51d8cf22a71f20136c6a7cf62ff0b3306"},
+    "gradle_module": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.4.module.json", "size": 2819, "sha256": "a9685470576d50fa78d65882f668b41ec6c00766f8eda08df1e9b9a0b3584d50"},
+    "sha256sums": {"file_name": "SHA256SUMS", "size": 440, "sha256": "0af48b40a9070753d444a057e786c2000a7a99cf7f2653de5da03bc04b4ef9b9"}
   },
   "staged_equivalence": {
     "entry_manifest": "provenance/accepted-staging-entries.sha256",
-    "identical_non_manifest_entries": 35,
+    "identical_non_manifest_entries": 36,
     "whole_jar_byte_identical": false,
     "only_changed_entry_bytes": "META-INF/MANIFEST.MF",
-    "change_reason": "The sealed alpha.3 functional entries match the reviewed render-core migration candidate; only the versioned manifest is excluded from the entry manifest.",
+    "change_reason": "The sealed alpha.4 functional entries match the reviewed 5.23 adapter-API migration candidate; only the versioned manifest is excluded from the entry manifest.",
     "archive_normalization": "Every release JAR entry uses ZIP STORED compression and empty directories are excluded."
   },
   "runtime_module_migration": {
@@ -111,6 +111,49 @@
     "package_normalized_caller_bytecode_exact": true,
     "gallery_byte_identical": true,
     "behavior_change": false
+  },
+  "adapter_api_module_migration": {
+    "baseline_version": "0.1.0-alpha.3",
+    "baseline_release_commit": "72e2855e96aa759212ce381b8c05c437487ba9ae",
+    "baseline_production_jar_size": 113607,
+    "baseline_production_jar_sha256": "0be9ddacdac5a11a15e608605562d8f49b142585d1ec605ad7278b14e89a17a2",
+    "repository": "https://github.com/jan-guenter/bluemap-addon-adapter-api",
+    "version": "0.1.0-alpha.2",
+    "tag": "v0.1.0-alpha.2",
+    "commit": "e81f08bc4bfbf02d810ec8949a019130e2e61634",
+    "source_tree": "2f974c9bb2ba13888d69682f86f30f58922d30eb",
+    "target_bluemap_version": "5.22-feature.backport-5.23-stateless-java-web-server-46",
+    "target_bluemap_commit": "7e07f4e74ec1e92a6ead9aa1e66054af3e133aac",
+    "production_archive": {
+      "old_entries": 36,
+      "new_entries": 37,
+      "unchanged_entries": 13,
+      "changed_common_entries": 4,
+      "removed_entries": 18,
+      "added_entries": 19,
+      "renamed_consumer_classes": 15,
+      "removed_local_helper_classes": 3,
+      "added_shared_helper_classes": 4
+    },
+    "sources_archive": {
+      "old_entries": 26,
+      "new_entries": 27,
+      "unchanged_entries": 10,
+      "changed_common_entries": 4,
+      "removed_entries": 12,
+      "added_entries": 13,
+      "package_only_consumer_sources": 7,
+      "removed_local_helper_sources": 3,
+      "added_shared_helper_sources": 4
+    },
+    "registration_method_source_exact": true,
+    "failure_reasons_preserved": true,
+    "block_entity_registration_order_preserved": true,
+    "visual_geometry_changed": false,
+    "synthetic_dispatch_admission_tightened": true,
+    "runtime_admission_restricted_to_exact_target": true,
+    "standalone_module_jar_installed": false,
+    "gallery_byte_identical": true
   },
   "gallery": {
     "archive_file_name": "bluemap-laserio-gallery.zip",

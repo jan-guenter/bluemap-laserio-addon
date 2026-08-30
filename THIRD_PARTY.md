@@ -2,12 +2,30 @@
 
 ## BlueMap
 
-- Exact backport: `5.22-agent.backport-5.22-mc1.21.1-2`
-- Commit: `9be321df995a1103808621d529eb72773e719d4d`
+- Exact feature backport:
+  `5.22-feature.backport-5.23-stateless-java-web-server-46`
+- Commit: `7e07f4e74ec1e92a6ead9aa1e66054af3e133aac`
 - API commit: `285c9a60eff3ac2b0cab308ce1058d1565be0971`
 - License: MIT
 - Use: compile-only internal renderer API and owner-authored adapter patterns
 - Redistributed: complete license notice only, as `LICENSE-BlueMap`
+
+## BlueMap Add-on Adapter API
+
+- Repository: `https://github.com/jan-guenter/bluemap-addon-adapter-api`
+- Version: `0.1.0-alpha.2`
+- Tag: `v0.1.0-alpha.2`
+- Commit: `e81f08bc4bfbf02d810ec8949a019130e2e61634`
+- Production-source tree: `2f974c9bb2ba13888d69682f86f30f58922d30eb`
+- License: MIT
+- Use: exact 5.23 runtime admission, identity-safe registry operations,
+  resource extension construction, and synthetic-dispatch validation
+- Redistributed: four production classes and their sources inside this add-on
+- Not redistributed: the standalone adapter-API JAR, tests, or build files
+
+The consumer gitlink and settings preflight pin the exact tagged commit and
+production-source tree. The add-on selects only the exact 5.23
+feature-backport runtime identity.
 
 ## BlueMap Add-on Render Core
 
@@ -17,7 +35,7 @@
 - Commit: `faf53c9586a2c876b5a91db5ae3c2650a98f19ba`
 - Production-source tree: `73870b3976ad3a17bf4bf350d9531b66d3d4a3af`
 - License: MIT
-- Use: exact source-bundled BlueMap 5.22 face-lighting sampler
+- Use: exact source-bundled face-lighting sampler
 - Redistributed: `FaceLighting` production class and source inside this add-on
 - Not redistributed: the standalone render-core JAR, its tests, or build files
 

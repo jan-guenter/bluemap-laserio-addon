@@ -6,10 +6,10 @@ staging comparison needed to get useful visual feedback.
 
 After the owner accepts the candidate:
 
-1. Initialize the pinned development toolkit, runtime source module, and
-   render-core source module with `git submodule update --init --recursive --
+1. Initialize the pinned development toolkit and all three source modules with
+   `git submodule update --init --recursive --
    tooling/bluemap-addon-toolkit modules/bluemap-addon-runtime
-   modules/bluemap-addon-render-core`.
+   modules/bluemap-addon-render-core modules/bluemap-addon-adapter-api`.
 2. Confirm the accepted renderer remains inside the documented narrow scope
    and the deterministic twelve-cell gallery exactly matches that candidate.
 3. Freeze the accepted staging JAR's non-manifest entry hashes in
@@ -17,7 +17,8 @@ After the owner accepts the candidate:
    `bluemap-addon-toolkit jar-entries write` command.
 4. Change `addon_version` from the SNAPSHOT to its final version through a PR.
 5. Build production JAR, sources JAR, POM, and Gradle module metadata with the
-   exact promotion Java/Gradle/BlueMap inputs.
+   exact promotion Java and Gradle inputs plus BlueMap commit
+   `7e07f4e74ec1e92a6ead9aa1e66054af3e133aac`.
 6. Put their exact sizes and SHA-256 values in `gradle.properties` and complete
    `provenance/release.json`.
 7. Run `verifyReleaseCandidate -PreleaseTag=v<version>` with all exact candidate
