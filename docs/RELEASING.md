@@ -6,8 +6,10 @@ staging comparison needed to get useful visual feedback.
 
 After the owner accepts the candidate:
 
-1. Initialize the pinned development toolkit and runtime source module with
-   `git submodule update --init --recursive -- tooling/bluemap-addon-toolkit modules/bluemap-addon-runtime`.
+1. Initialize the pinned development toolkit, runtime source module, and
+   render-core source module with `git submodule update --init --recursive --
+   tooling/bluemap-addon-toolkit modules/bluemap-addon-runtime
+   modules/bluemap-addon-render-core`.
 2. Confirm the accepted renderer remains inside the documented narrow scope
    and the deterministic twelve-cell gallery exactly matches that candidate.
 3. Freeze the accepted staging JAR's non-manifest entry hashes in

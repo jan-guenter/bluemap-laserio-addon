@@ -30,6 +30,12 @@ The gitlink pins `v0.1.0-alpha.1` commit
 `6c062239f2669de9d20da32dc8b5372a5653b19d` and the settings preflight rejects
 an uninitialized, changed, or dirty checkout.
 
+The pinned `modules/bluemap-addon-render-core` source module supplies the
+byte-equivalent face-lighting sampler shared by compatible BlueMap 5.22
+adapters. Its source is also compiled directly into this add-on; no shared
+runtime JAR is installed or nested. The settings preflight pins both its exact
+commit and production-source tree and rejects an uninitialized or dirty copy.
+
 ## Install
 
 Place the production JAR in BlueMap's add-on pack directory and restart the
