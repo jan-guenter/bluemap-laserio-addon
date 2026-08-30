@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "status": "owner-accepted-release-candidate",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "release_date": "2026-08-30",
   "repository": "https://github.com/jan-guenter/bluemap-laserio-addon",
-  "tag": "v0.1.0-alpha.2",
-  "maven_coordinate": "io.github.jan-guenter:bluemap-laserio-addon:0.1.0-alpha.2",
+  "tag": "v0.1.0-alpha.3",
+  "maven_coordinate": "io.github.jan-guenter:bluemap-laserio-addon:0.1.0-alpha.3",
   "owner_accepted_staging": {
     "commit": "2cb09ace67ef697d3385e1137541f8c2a1b3ad66",
     "tree": "757bb555eaf0b224f574f4d841372bae9506e17f",
@@ -32,21 +32,21 @@
   "accepted_staging_entries": {
     "path": "provenance/accepted-staging-entries.sha256",
     "entry_count": 35,
-    "sha256": "182173579356e349b510444ef46a301bc486c24a20add08a94afd56ac0995f66"
+    "sha256": "194d8f6082ce1ba9db3cf6e4aaf9e71245ae74509586a2c79862fb79d57c5515"
   },
   "final_release_artifacts": {
-    "production_jar": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.2.jar", "size": 111676, "sha256": "d01eb100dd57f7efc1ac4ce8c004e02320901e83ef16337dac24b9e690849828"},
-    "sources_jar": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.2-sources.jar", "size": 74565, "sha256": "654a8ab0bfc0ea38b65a638e1f459acef3891e41ddf2607916c9f6468a860429"},
-    "pom": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.2.pom", "size": 1317, "sha256": "1d0598c7ac8cd13e015f58f343a355fc1691dc638310b40320d1e8ce52737f21"},
-    "gradle_module": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.2.module.json", "size": 2819, "sha256": "7961b5578b6e4ea22fe2c06827916a6bd104ea9018e3a2b985d7c13a0684d84e"},
-    "sha256sums": {"file_name": "SHA256SUMS", "size": 440, "sha256": "aeeb74f8e793dc11be07efe34b3747909d8cb2f55f21d6c977408e8f649e0ce3"}
+    "production_jar": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.3.jar", "size": 113607, "sha256": "0be9ddacdac5a11a15e608605562d8f49b142585d1ec605ad7278b14e89a17a2"},
+    "sources_jar": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.3-sources.jar", "size": 76502, "sha256": "9a181222cc2239f6be3db569cf45bb1d652811076b27dd1b8c5cd7cdf8b5150b"},
+    "pom": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.3.pom", "size": 1317, "sha256": "381e3b507c3e3887a7d22b61b80c3d36ce56f3ae8004fd138db38182cac5844c"},
+    "gradle_module": {"file_name": "bluemap-laserio-addon-0.1.0-alpha.3.module.json", "size": 2819, "sha256": "436a6f849ca6ac6e393735ddf35be1b3299114900c0ee8c2a4017146cb1f9f5c"},
+    "sha256sums": {"file_name": "SHA256SUMS", "size": 440, "sha256": "4fd65329f81bdc14ee654b360a95bf844f4032303586ab388ea1cad9c7bf6c2b"}
   },
   "staged_equivalence": {
     "entry_manifest": "provenance/accepted-staging-entries.sha256",
     "identical_non_manifest_entries": 35,
     "whole_jar_byte_identical": false,
     "only_changed_entry_bytes": "META-INF/MANIFEST.MF",
-    "change_reason": "The sealed alpha.2 functional entries match the reviewed runtime-module migration candidate; only the versioned manifest is excluded from the entry manifest.",
+    "change_reason": "The sealed alpha.3 functional entries match the reviewed render-core migration candidate; only the versioned manifest is excluded from the entry manifest.",
     "archive_normalization": "Every release JAR entry uses ZIP STORED compression and empty directories are excluded."
   },
   "runtime_module_migration": {
@@ -77,6 +77,37 @@
     },
     "package_normalized_shared_sources_exact": true,
     "package_normalized_shared_bytecode_exact": true,
+    "package_normalized_caller_bytecode_exact": true,
+    "gallery_byte_identical": true,
+    "behavior_change": false
+  },
+  "render_core_module_migration": {
+    "baseline_version": "0.1.0-alpha.2",
+    "baseline_release_commit": "e18f93588eacd3a188190a0318b32f11a038f798",
+    "baseline_production_jar_size": 111676,
+    "baseline_production_jar_sha256": "d01eb100dd57f7efc1ac4ce8c004e02320901e83ef16337dac24b9e690849828",
+    "repository": "https://github.com/jan-guenter/bluemap-addon-render-core",
+    "version": "0.1.0-alpha.1",
+    "tag": "v0.1.0-alpha.1",
+    "commit": "faf53c9586a2c876b5a91db5ae3c2650a98f19ba",
+    "source_tree": "73870b3976ad3a17bf4bf350d9531b66d3d4a3af",
+    "production_archive": {
+      "old_entries": 36,
+      "new_entries": 36,
+      "unchanged_entries": 30,
+      "changed_common_entries": 4,
+      "removed_local_face_lighting_classes": 2,
+      "added_shared_face_lighting_classes": 2
+    },
+    "sources_archive": {
+      "old_entries": 26,
+      "new_entries": 26,
+      "unchanged_entries": 22,
+      "changed_common_entries": 3,
+      "removed_local_face_lighting_sources": 1,
+      "added_shared_face_lighting_sources": 1
+    },
+    "normalized_face_lighting_bytecode_exact": true,
     "package_normalized_caller_bytecode_exact": true,
     "gallery_byte_identical": true,
     "behavior_change": false
