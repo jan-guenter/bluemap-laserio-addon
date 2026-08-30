@@ -8,12 +8,13 @@ partner port beams. Card/capability paths, flow/activity, particles,
 held-wrench alpha, animation, and cross-dimension partner lines are excluded.
 
 Before running Gradle gates, activate a Python 3.11 or newer virtual
-environment, initialize the exact development-tool and runtime source
-submodules, and install the matching toolkit wheel into it:
+environment, initialize the exact development-tool, runtime, and render-core
+source submodules, and install the matching toolkit wheel into it:
 
 ```bash
 git submodule update --init --recursive -- \
-  tooling/bluemap-addon-toolkit modules/bluemap-addon-runtime
+  tooling/bluemap-addon-toolkit modules/bluemap-addon-runtime \
+  modules/bluemap-addon-render-core
 python -m pip install --disable-pip-version-check --no-deps \
   --require-hashes --only-binary=:all: \
   --requirement requirements/toolkit.txt
@@ -24,6 +25,8 @@ The requirement locks the 20,585-byte `v0.3.0-alpha.1` wheel at SHA-256
 The runtime gitlink pins `v0.1.0-alpha.1` commit
 `6c062239f2669de9d20da32dc8b5372a5653b19d`; its main sources are compiled
 into the add-on and its standalone JAR is never installed or nested.
+The render-core gitlink similarly contributes only its exact pinned production
+source; its standalone JAR is never installed or nested.
 
 ## Prototype
 

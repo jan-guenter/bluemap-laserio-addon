@@ -9,6 +9,20 @@
 - Use: compile-only internal renderer API and owner-authored adapter patterns
 - Redistributed: complete license notice only, as `LICENSE-BlueMap`
 
+## BlueMap Add-on Render Core
+
+- Repository: `https://github.com/jan-guenter/bluemap-addon-render-core`
+- Version: `0.1.0-alpha.1`
+- License: MIT
+- Use: exact source-bundled BlueMap 5.22 face-lighting sampler
+- Redistributed: `FaceLighting` production class and source inside this add-on
+- Not redistributed: the standalone render-core JAR, its tests, or build files
+
+The consumer gitlink and settings preflight pin the exact module commit and
+production-source tree. The shared implementation is package-normalized from
+the add-on's former byte-equivalent private copy, so this migration does not
+change renderer behavior.
+
 ## LaserIO
 
 - Exact runtime: `laserio-1.9.11.jar`, 1,305,285 bytes

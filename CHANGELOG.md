@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.3 - 2026-08-30
+
+- Replaced the private face-lighting helper with the byte-equivalent
+  `bluemap-addon-render-core` `v0.1.0-alpha.1` source module.
+- Added fail-closed checks for the committed, indexed, initialized, exact and
+  clean render-core submodule and its exact production-source tree.
+- Kept the accepted renderer, profile, installed-resource contract and gallery
+  unchanged.
+
 ## 0.1.0-alpha.2 - 2026-08-30
 
 - Replaced the private exact-artifact detector copy with the byte-equivalent

@@ -16,6 +16,7 @@ base {
 
 sourceSets {
     main.java.srcDir 'modules/bluemap-addon-runtime/src/main/java'
+    main.java.srcDir 'modules/bluemap-addon-render-core/src/main/java'
 }
 
 repositories {
@@ -114,6 +115,17 @@ def sharedRuntimeSources = [
         'ArtifactPin.java',
         'ExactArtifactDetector.java'
 ].collect { sharedRuntimePackage + it }
+def sharedRenderCorePackage =
+        'io/github/janguenter/bluemap/addon/render/core/adapter/bluemap522/'
+def sharedRenderCoreClasses = [
+        'FaceLighting.class',
+        'FaceLighting$Sample.class'
+].collect { sharedRenderCorePackage + it }
+def sharedRenderCoreSources = [
+        'FaceLighting.java'
+].collect { sharedRenderCorePackage + it }
+def legacyFaceLighting =
+        'io/github/janguenter/bluemap/laserio/adapter/bluemap522/FaceLighting'
 
 tasks.register('verifyGeneratedGallery', Exec) {
     commandLine 'python3', 'gallery/generate.py', '--check'
@@ -162,15 +174,19 @@ tasks.register('verifyProductionJar') {
                     'META-INF/NOTICE-bluemap-laserio-addon.md',
                     'META-INF/THIRD_PARTY-bluemap-laserio-addon.md',
                     'META-INF/bluemap-laserio/upstreams.json'
-            ] + sharedRuntimeClasses
+            ] + sharedRuntimeClasses + sharedRenderCoreClasses
             def missing = required.findAll { !entries.contains(it) }
             def duplicateShared = sharedRuntimeClasses.findAll { shared ->
                 entries.count { it == shared } != 1
             }
-            if (!missing.isEmpty() || !duplicateShared.isEmpty()) {
+            def duplicateRenderCore = sharedRenderCoreClasses.findAll { shared ->
+                entries.count { it == shared } != 1
+            }
+            if (!missing.isEmpty() || !duplicateShared.isEmpty()
+                    || !duplicateRenderCore.isEmpty()) {
                 throw new GradleException(
                         "Production JAR shared boundary mismatch: missing=${missing}, "
-                                + "nonUnique=${duplicateShared}"
+                                + "nonUnique=${duplicateShared + duplicateRenderCore}"
                 )
             }
             def descriptor = new groovy.json.JsonSlurper().parseText(
@@ -199,11 +215,15 @@ tasks.register('verifyProductionJar') {
                         || entry.startsWith(
                             'io/github/janguenter/bluemap/laserio/profile/ExactArtifactDetector'
                         )
+                        || entry.startsWith(legacyFaceLighting)
                         || (entry.startsWith(sharedRuntimePackage)
                             && !sharedRuntimeClasses.contains(entry))
+                        || (entry.startsWith(sharedRenderCorePackage)
+                            && !sharedRenderCoreClasses.contains(entry))
                         || (entry.endsWith('.class')
                             && !entry.startsWith('io/github/janguenter/bluemap/laserio/')
-                            && !sharedRuntimeClasses.contains(entry))
+                            && !sharedRuntimeClasses.contains(entry)
+                            && !sharedRenderCoreClasses.contains(entry))
                         || candidateIds.any { entry.startsWith("assets/${it}/") }
             }
             if (!forbidden.isEmpty()) {
@@ -230,15 +250,19 @@ tasks.register('verifySourcesJar') {
                     'META-INF/LICENSE-bluemap-laserio-addon',
                     'META-INF/LICENSE-BlueMap',
                     'META-INF/bluemap-laserio/upstreams.json'
-            ] + sharedRuntimeSources
+            ] + sharedRuntimeSources + sharedRenderCoreSources
             def missing = required.findAll { !entries.contains(it) }
             def duplicateShared = sharedRuntimeSources.findAll { shared ->
+                entries.count { it == shared } != 1
+            }
+            def duplicateRenderCore = sharedRenderCoreSources.findAll { shared ->
                 entries.count { it == shared } != 1
             }
             def projectJava = entries.findAll { it.endsWith('.java') }
             def foreignJava = projectJava.findAll {
                 !it.startsWith('io/github/janguenter/bluemap/laserio/')
                         && !sharedRuntimeSources.contains(it)
+                        && !sharedRenderCoreSources.contains(it)
             }
             def candidateIds = new groovy.json.JsonSlurper()
                     .parse(file('provenance/upstreams.json')).artifacts*.mod_id
@@ -254,18 +278,23 @@ tasks.register('verifySourcesJar') {
                         || entry.endsWith('/bootstrap.json')
                         || entry == 'io/github/janguenter/bluemap/laserio/profile/ArtifactPin.java'
                         || entry == 'io/github/janguenter/bluemap/laserio/profile/ExactArtifactDetector.java'
+                        || entry == "${legacyFaceLighting}.java"
                         || (entry.startsWith(sharedRuntimePackage)
                             && !sharedRuntimeSources.contains(entry))
+                        || (entry.startsWith(sharedRenderCorePackage)
+                            && !sharedRenderCoreSources.contains(entry))
                         || candidateIds.any { entry.startsWith("assets/${it}/") }
             }
             if (!missing.isEmpty()
                     || !duplicateShared.isEmpty()
+                    || !duplicateRenderCore.isEmpty()
                     || projectJava.isEmpty()
                     || !foreignJava.isEmpty()
                     || !forbidden.isEmpty()) {
                 throw new GradleException(
                         "Sources JAR boundary mismatch: missing=${missing}, "
-                                + "nonUnique=${duplicateShared}, foreignJava=${foreignJava}, "
+                                + "nonUnique=${duplicateShared + duplicateRenderCore}, "
+                                + "foreignJava=${foreignJava}, "
                                 + "forbidden=${forbidden}"
                 )
             }
