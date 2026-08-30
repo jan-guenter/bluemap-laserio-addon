@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "migration-candidate",
+  "status": "release-candidate-sealed",
   "consumer": "bluemap-laserio-addon",
   "consumer_version": "0.1.0-alpha.4",
   "module": {
