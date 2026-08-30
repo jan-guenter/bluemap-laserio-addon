@@ -7,7 +7,7 @@ pluginManagement {
     def expectedRuntimeCommit = '6c062239f2669de9d20da32dc8b5372a5653b19d'
     def expectedRuntimeSourceTree = 'c70cf01d3196eb8a8eeacb572f7f3ceb6f3e2025'
     def renderCorePath = 'modules/bluemap-addon-render-core'
-    def expectedRenderCoreCommit = '1ef73ea71bcf6a84ed062b566ab90ea7e7701596'
+    def expectedRenderCoreCommit = 'faf53c9586a2c876b5a91db5ae3c2650a98f19ba'
     def expectedRenderCoreSourceTree = '73870b3976ad3a17bf4bf350d9531b66d3d4a3af'
     def consumerRoot = settings.settingsDir
     def toolkit = new File(consumerRoot, toolkitPath)

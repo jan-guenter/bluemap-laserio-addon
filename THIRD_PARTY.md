@@ -13,6 +13,9 @@
 
 - Repository: `https://github.com/jan-guenter/bluemap-addon-render-core`
 - Version: `0.1.0-alpha.1`
+- Tag: `v0.1.0-alpha.1`
+- Commit: `faf53c9586a2c876b5a91db5ae3c2650a98f19ba`
+- Production-source tree: `73870b3976ad3a17bf4bf350d9531b66d3d4a3af`
 - License: MIT
 - Use: exact source-bundled BlueMap 5.22 face-lighting sampler
 - Redistributed: `FaceLighting` production class and source inside this add-on
