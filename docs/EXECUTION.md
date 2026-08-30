@@ -25,8 +25,10 @@ The requirement locks the 20,585-byte `v0.3.0-alpha.1` wheel at SHA-256
 The runtime gitlink pins `v0.1.0-alpha.1` commit
 `6c062239f2669de9d20da32dc8b5372a5653b19d`; its main sources are compiled
 into the add-on and its standalone JAR is never installed or nested.
-The render-core gitlink similarly contributes only its exact pinned production
-source; its standalone JAR is never installed or nested.
+The render-core gitlink pins `v0.1.0-alpha.2` commit
+`24b84efdc8235f3f1323e1a8e9fd033080e3a79e` and production-source tree
+`424040931680fb82d37693f893ca887c0ed48eae`. It contributes only that exact
+5.23 source; its standalone JAR is never installed or nested.
 The adapter-API gitlink contributes four exact production sources. Its
 standalone JAR is also never installed or nested. The settings preflight
 accepts only the exact BlueMap feature-backport commit
