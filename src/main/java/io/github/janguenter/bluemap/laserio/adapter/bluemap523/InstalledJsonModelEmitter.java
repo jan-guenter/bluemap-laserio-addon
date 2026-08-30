@@ -5,7 +5,7 @@
  * BlueMap's MIT resource-model coordinate and UV conventions.
  */
 
-package io.github.janguenter.bluemap.laserio.adapter.bluemap522;
+package io.github.janguenter.bluemap.laserio.adapter.bluemap523;
 
 import com.flowpowered.math.vector.Vector3f;
 import com.flowpowered.math.vector.Vector4f;

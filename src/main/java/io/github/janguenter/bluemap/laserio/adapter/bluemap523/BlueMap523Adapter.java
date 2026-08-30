@@ -2,24 +2,26 @@
  * SPDX-License-Identifier: MIT
  */
 
-package io.github.janguenter.bluemap.laserio.adapter.bluemap522;
+package io.github.janguenter.bluemap.laserio.adapter.bluemap523;
 
 import de.bluecolored.bluemap.core.map.hires.block.BlockRendererType;
 import de.bluecolored.bluemap.core.resources.pack.resourcepack.ResourcePack;
-import de.bluecolored.bluemap.core.resources.pack.resourcepack.blockstate.Variant;
 import de.bluecolored.bluemap.core.util.Key;
 import de.bluecolored.bluemap.core.world.mca.blockentity.BlockEntityType;
+import io.github.janguenter.bluemap.addon.adapter.api.bluemap523.RegistryGuard;
+import io.github.janguenter.bluemap.addon.adapter.api.bluemap523.ResourceExtensionType;
 import io.github.janguenter.bluemap.laserio.activation.AddonRuntime;
 import io.github.janguenter.bluemap.laserio.profile.LaserIo1911Profile;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/** BlueMap 5.22 registration boundary. Family renderer registrations go here. */
-public final class BlueMap522Adapter {
+/** Exact BlueMap 5.23 feature-backport registration boundary. */
+public final class BlueMap523Adapter {
 
     private static final AddonRuntime RUNTIME = AddonRuntime.INSTANCE;
     private static final Key RENDERER_KEY = Key.parse("bluemap_laserio:laserio_shape");
+    private static final Key EXTENSION_KEY = Key.parse("bluemap_laserio:exact_profile");
     private static final BlockRendererType RENDERER = new BlockRendererType.Impl(
             RENDERER_KEY,
             (pack, gallery, settings) -> new LaserIoRenderer(
@@ -27,9 +29,12 @@ public final class BlueMap522Adapter {
             )
     );
     private static final ResourcePack.Extension<ProfileResourceExtension> EXTENSION =
-            new ProfileResourceExtensionType(RUNTIME);
+            new ResourceExtensionType<>(
+                    EXTENSION_KEY,
+                    pack -> new ProfileResourceExtension(pack, RUNTIME)
+            );
 
-    private BlueMap522Adapter() {
+    private BlueMap523Adapter() {
     }
 
     /** Registers the exact-profile extension, renderer and three LaserIO block entities. */
@@ -63,12 +68,7 @@ public final class BlueMap522Adapter {
         return true;
     }
 
-    static boolean isExpectedDispatch(Variant variant) {
-        return variant != null
-                && variant.getRenderer() == RENDERER
-                && ResourcePack.MISSING_BLOCK_MODEL.equals(variant.getModel())
-                && !variant.isTransformed()
-                && !variant.isUvlock()
-                && Double.compare(variant.getWeight(), 1D) == 0;
+    static BlockRendererType renderer() {
+        return RENDERER;
     }
 }

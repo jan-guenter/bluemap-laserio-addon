@@ -10,7 +10,9 @@ changing it.
 - Minecraft `1.21.1`
 - NeoForge `21.1.248`
 - Java `21`
-- BlueMap `5.22-agent.backport-5.22-mc1.21.1-2`, commit `9be321df995a1103808621d529eb72773e719d4d`
+- BlueMap feature backport
+  `5.22-feature.backport-5.23-stateless-java-web-server-46`, commit
+  `7e07f4e74ec1e92a6ead9aa1e66054af3e133aac`
 - BlueMap API commit `285c9a60eff3ac2b0cab308ce1058d1565be0971`
 - Exact profile `laserio-1.9.11`
 
@@ -22,7 +24,7 @@ Mixins, or world state.
 
 - Preserve stock rendering while the runtime/profile is absent, duplicated,
   unsupported, malformed, disabled, or not yet implemented.
-- Keep the BlueMap internal API behind `adapter/bluemap522`.
+- Keep the BlueMap internal API behind `adapter/bluemap523`.
 - Keep exact candidate identities and resource contracts in the profile.
 - Keep state/NBT decoding, normalized data, and mesh emission separate.
 - Unknown family data gets one bounded diagnostic and stock fallback.
@@ -56,7 +58,7 @@ source dependencies:
 ```bash
 git submodule update --init --recursive -- \
   tooling/bluemap-addon-toolkit modules/bluemap-addon-runtime \
-  modules/bluemap-addon-render-core
+  modules/bluemap-addon-render-core modules/bluemap-addon-adapter-api
 ```
 
 Never stage or commit generated build output, candidate JARs, galleries, worlds,

@@ -2,7 +2,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-package io.github.janguenter.bluemap.laserio.adapter.bluemap522;
+package io.github.janguenter.bluemap.laserio.adapter.bluemap523;
 
 import de.bluecolored.bluemap.core.resources.adapter.ResourcesGson;
 import de.bluecolored.bluemap.core.resources.pack.resourcepack.model.Element;

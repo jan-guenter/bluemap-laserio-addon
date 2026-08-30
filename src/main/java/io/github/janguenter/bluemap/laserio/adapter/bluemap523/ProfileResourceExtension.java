@@ -2,16 +2,14 @@
  * SPDX-License-Identifier: MIT
  */
 
-package io.github.janguenter.bluemap.laserio.adapter.bluemap522;
+package io.github.janguenter.bluemap.laserio.adapter.bluemap523;
 
 import de.bluecolored.bluemap.core.resources.pack.resourcepack.ResourcePack;
 import de.bluecolored.bluemap.core.resources.pack.resourcepack.ResourcePackExtension;
-import de.bluecolored.bluemap.core.resources.pack.resourcepack.blockstate.Variant;
-import de.bluecolored.bluemap.core.resources.pack.resourcepack.blockstate.VariantSet;
-import de.bluecolored.bluemap.core.resources.pack.resourcepack.blockstate.Variants;
 import de.bluecolored.bluemap.core.util.Key;
 import de.bluecolored.bluemap.core.world.BlockProperties;
 import de.bluecolored.bluemap.core.world.BlockState;
+import io.github.janguenter.bluemap.addon.adapter.api.bluemap523.SyntheticDispatch;
 import io.github.janguenter.bluemap.addon.runtime.artifact.ExactArtifactDetector;
 import io.github.janguenter.bluemap.laserio.activation.AddonRuntime;
 import io.github.janguenter.bluemap.laserio.profile.LaserIo1911Profile;
@@ -45,7 +43,7 @@ final class ProfileResourceExtension implements ResourcePackExtension {
 
         de.bluecolored.bluemap.core.resources.pack.resourcepack.blockstate.BlockState dispatch =
                 resourcePack.getBlockStates().get(SYNTHETIC);
-        if (!validDispatch(dispatch)) {
+        if (!SyntheticDispatch.matches(dispatch, BlueMap523Adapter.renderer())) {
             runtime.inactive("synthetic-dispatch-invalid");
             return;
         }
@@ -98,21 +96,4 @@ final class ProfileResourceExtension implements ResourcePackExtension {
         }
     }
 
-    private static boolean validDispatch(
-            de.bluecolored.bluemap.core.resources.pack.resourcepack.blockstate.BlockState state
-    ) {
-        if (state == null || state.getMultipart() != null) {
-            return false;
-        }
-        Variants variants = state.getVariants();
-        if (variants == null || variants.getDefaultVariant() == null) {
-            return false;
-        }
-        VariantSet set = variants.getDefaultVariant();
-        if (set.getVariants().length != 1) {
-            return false;
-        }
-        Variant variant = set.getVariants()[0];
-        return BlueMap522Adapter.isExpectedDispatch(variant);
-    }
 }
