@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.5 - 2026-08-30
+
+- Replaced the former render-core package with the exact BlueMap 5.23
+  feature-backport `v0.1.0-alpha.2` source module.
+- Restricted the source-bundled face-lighting helper and its archive checks to
+  `adapter.bluemap523`.
+- Preserved renderer geometry, extension registrations, and the twelve-cell
+  gallery.
+
 ## 0.1.0-alpha.4 - 2026-08-30
 
 - Replaced the private compatibility, registry, resource-extension, and

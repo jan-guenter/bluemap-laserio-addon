@@ -34,8 +34,10 @@ an uninitialized, changed, or dirty checkout.
 The pinned `modules/bluemap-addon-render-core` source module supplies the
 byte-equivalent face-lighting sampler shared by compatible BlueMap adapters.
 Its source is also compiled directly into this add-on; no shared runtime JAR
-is installed or nested. The settings preflight pins both its exact
-commit and production-source tree and rejects an uninitialized or dirty copy.
+is installed or nested. The gitlink pins `v0.1.0-alpha.2` commit
+`24b84efdc8235f3f1323e1a8e9fd033080e3a79e` and production-source tree
+`424040931680fb82d37693f893ca887c0ed48eae`. The settings preflight rejects an
+uninitialized, changed, or dirty copy.
 
 The pinned `modules/bluemap-addon-adapter-api` source module supplies the
 exact 5.23 feature-backport runtime identity, registry guards, resource

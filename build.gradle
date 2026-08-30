@@ -117,7 +117,7 @@ def sharedRuntimeSources = [
         'ExactArtifactDetector.java'
 ].collect { sharedRuntimePackage + it }
 def sharedRenderCorePackage =
-        'io/github/janguenter/bluemap/addon/render/core/adapter/bluemap522/'
+        'io/github/janguenter/bluemap/addon/render/core/adapter/bluemap523/'
 def sharedRenderCoreClasses = [
         'FaceLighting.class',
         'FaceLighting$Sample.class'

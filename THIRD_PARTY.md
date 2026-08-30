@@ -30,18 +30,18 @@ feature-backport runtime identity.
 ## BlueMap Add-on Render Core
 
 - Repository: `https://github.com/jan-guenter/bluemap-addon-render-core`
-- Version: `0.1.0-alpha.1`
-- Tag: `v0.1.0-alpha.1`
-- Commit: `faf53c9586a2c876b5a91db5ae3c2650a98f19ba`
-- Production-source tree: `73870b3976ad3a17bf4bf350d9531b66d3d4a3af`
+- Version: `0.1.0-alpha.2`
+- Tag: `v0.1.0-alpha.2`
+- Commit: `24b84efdc8235f3f1323e1a8e9fd033080e3a79e`
+- Production-source tree: `424040931680fb82d37693f893ca887c0ed48eae`
 - License: MIT
-- Use: exact source-bundled face-lighting sampler
+- Use: exact 5.23 source-bundled face-lighting sampler
 - Redistributed: `FaceLighting` production class and source inside this add-on
 - Not redistributed: the standalone render-core JAR, its tests, or build files
 
 The consumer gitlink and settings preflight pin the exact module commit and
-production-source tree. The shared implementation is package-normalized from
-the add-on's former byte-equivalent private copy, so this migration does not
+production-source tree. The shared 5.23 implementation differs from the
+previous module only by its versioned package, so this migration does not
 change renderer behavior.
 
 ## LaserIO
